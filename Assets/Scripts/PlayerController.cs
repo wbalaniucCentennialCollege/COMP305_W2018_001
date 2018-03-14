@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour {
     public float groundRadius = 0.2f;
     public Transform groundCheck;
     public LayerMask defineGround;
-    public Transform attackCheck;
 
     private Rigidbody2D rBody;
     private SpriteRenderer sRend;
@@ -60,19 +59,15 @@ public class PlayerController : MonoBehaviour {
             // Set character velocity
             rBody.velocity = new Vector2(moveH * maxSpeed, rBody.velocity.y);
 
-            
             // Check direction and flip sprite
             if (moveH > 0)
             {
                 sRend.flipX = false;
-                attackCheck.position = new Vector3(attackCheck.position.x, attackCheck.position.y, attackCheck.position.z);
             }
             else if (moveH < 0)
             {
                 sRend.flipX = true;
-                attackCheck.position = new Vector3(-attackCheck.position.x, attackCheck.position.y, attackCheck.position.z);
             }
-            
         }
     }
 }
