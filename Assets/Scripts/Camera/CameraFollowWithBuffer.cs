@@ -9,22 +9,21 @@ public class CameraFollowWithBuffer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        playerMoveThreshold = transform.GetChild(0);
+		
 	}
 	
-	// Update is called once per framet\
+	// Update is called once per frame
 	void Update () {
 		if(playerPosition.position.x > playerMoveThreshold.position.x)
         {
-            this.transform.position = new Vector3(playerPosition.position.x, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(playerPosition.position.x, this.transform.position.y, this.transform.position.z);
         }
 	}
 
-    // Predefined Unity function for drawing Gizmos in the editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(playerMoveThreshold.position, new Vector3(playerMoveThreshold.position.x, playerMoveThreshold.position.y + 100, playerMoveThreshold.position.z));
-        Gizmos.DrawLine(playerMoveThreshold.position, new Vector3(playerMoveThreshold.position.x, playerMoveThreshold.position.y - 100, playerMoveThreshold.position.z));
+        Gizmos.DrawLine(playerMoveThreshold.position, new Vector2(playerMoveThreshold.position.x, playerMoveThreshold.position.y + 50));
+        Gizmos.DrawLine(playerMoveThreshold.position, new Vector2(playerMoveThreshold.position.x, playerMoveThreshold.position.y - 50));
     }
 }

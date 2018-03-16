@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ExplosionHandler : MonoBehaviour {
 
-    public GameObject plusOne;
+    public GameObject scoreIndicator;
 
     void Explode()
     {
-        Instantiate(plusOne, this.transform.position, this.transform.rotation);
+        Instantiate(scoreIndicator, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }

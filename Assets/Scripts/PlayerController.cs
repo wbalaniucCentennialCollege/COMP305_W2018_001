@@ -59,6 +59,15 @@ public class PlayerController : MonoBehaviour {
             // Set character velocity
             rBody.velocity = new Vector2(moveH * maxSpeed, rBody.velocity.y);
 
+            if(moveH > 0 && !isRight)
+            {
+                Flip();
+            } else if(moveH < 0 && isRight)
+            {
+                Flip();
+            }
+
+            /*
             // Check direction and flip sprite
             if (moveH > 0)
             {
@@ -68,6 +77,15 @@ public class PlayerController : MonoBehaviour {
             {
                 sRend.flipX = true;
             }
+            */
         }
+    }
+
+    void Flip()
+    {
+        Vector3 temp = this.transform.localScale;
+        temp.x *= -1;
+        this.transform.localScale = temp;
+        isRight = !isRight;
     }
 }
