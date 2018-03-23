@@ -10,6 +10,8 @@ public class State : ScriptableObject {
     public void UpdateState(EnemyStateController controller)
     {
         // Evaluate our actions and decisions/transitions
+        DoActions(controller);
+        CheckTransitions(controller);
     }
 
     private void DoActions(EnemyStateController controller)
@@ -26,7 +28,16 @@ public class State : ScriptableObject {
     {
         for (int i = 0; i < transitions.Length; i++)
         {
-            // Determine whether we have decided to transition into another state
+            bool decisionSucceeded = transitions[i].decision.Decide(controller);
+
+            if(decisionSucceeded)
+            {
+                controller.TransitionToState(transitions[i].trueState);
+            }
+            else
+            {
+                controller.TransitionToState(transitions[i].falseState);
+            }
         }
     }
 }

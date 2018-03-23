@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu (menuName = "PluggableAI/Decisions/Look")]
 public class LookDecision : Decision {
     public override bool Decide(EnemyStateController controller)
     {
@@ -20,6 +21,7 @@ public class LookDecision : Decision {
         if(hit && hit.collider.CompareTag("Player"))
         {
             // Set my player as a chase target
+            controller.chaseTarget = hit.transform;
             return true;
         }
         else
