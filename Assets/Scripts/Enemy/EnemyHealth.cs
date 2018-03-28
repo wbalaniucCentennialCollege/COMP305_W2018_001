@@ -31,18 +31,21 @@ public class EnemyHealth : MonoBehaviour {
     */
 
     private float currentHealth;
+    private AudioSource audioSource;
 
 
     // Define scoring
 
     // Use this for initialization
     void Start () {
+        audioSource = GetComponent<AudioSource>();
         currentHealth = enemyHealthData.maxHealth;
 	}
 	
 	public void Damage(float damageAmt)
     {
         currentHealth -= damageAmt;
+        audioSource.Play();
         // currentHealth = currentHealh - damageAmt;
         UpdateHealth();
     }
