@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 374550417}
   - component: {fileID: 374550416}
   - component: {fileID: 374550415}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3041,7 +3041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418972446}
   - component: {fileID: 1418972445}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3084,7 +3084,7 @@ GameObject:
   - component: {fileID: 1431633631}
   - component: {fileID: 1431633633}
   - component: {fileID: 1431633632}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MovingPlatforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3239,6 +3239,18 @@ Prefab:
       propertyPath: attackSound.swordSwing3
       value: 
       objectReference: {fileID: 8300000, guid: ae793a61a9d9f5345a4a449e38a17589, type: 3}
+    - target: {fileID: 114671581060685896, guid: d7dd02004ef92284b9d5959d3644f29c,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ed2a73a9da894044b4020a1bfa9889c,
+        type: 2}
+    - target: {fileID: 114915634833826152, guid: d7dd02004ef92284b9d5959d3644f29c,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ed2a73a9da894044b4020a1bfa9889c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7dd02004ef92284b9d5959d3644f29c, type: 2}
   m_IsPrefabParent: 0

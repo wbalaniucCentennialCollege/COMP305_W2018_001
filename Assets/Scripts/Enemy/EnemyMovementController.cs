@@ -30,7 +30,7 @@ public class EnemyMovementController : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(velocity.x));
 
-        Debug.Log(velocity.x);
+        // Debug.Log(velocity.x);
 
         lastPosition = transform.position;
     }
